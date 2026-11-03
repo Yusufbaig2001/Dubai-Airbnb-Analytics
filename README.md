@@ -1,40 +1,106 @@
 # Dubai Airbnb Market Analytics
 
-End-to-end data analytics project analyzing the Dubai short-term rental market. This project explores pricing trends, host performance, and property characteristics across thousands of Airbnb listings using **Python, SQL, and Power BI**.
+An AI-assisted end-to-end data analytics project exploring Dubai's short-term rental market using Python, MySQL and Power BI.
 
-## 📊 Power BI Dashboard
+The project analyses listing performance, pricing, occupancy, host categories, property types and bedroom configurations to identify useful business insights.
+
+## Dashboard
 
 ### Executive Overview
-![Page 1](page1_executive.png)
+![Executive Overview](page1_executive.png)
 
-### Host & Property Deep Dive
-![Page 2](page2_host_property.png)
+### Host and Property Analysis
+![Host and Property Analysis](page2_host_property.png)
 
-## 📋 Business Problem
-Dubai's tourism and short-term rental market is booming. Investors and property managers need to know:
+**Power BI Dashboard:** [View PBIX file](powerbi_dashboard.pbix)
+
+## Business Problem
+
+Property investors and short-term rental managers need to understand:
+
 - Which property types generate the highest revenue?
-- Does being a "Superhost" actually increase total revenue?
-- How does the number of bedrooms impact the Average Daily Rate (ADR)?
+- How do Superhost and regular-host listings compare?
+- How does bedroom count affect average daily rates?
+- Which neighborhoods have stronger occupancy and revenue?
+- Which listings have high prices but low occupancy?
+- How does revenue change over time?
 
-## 🤖 AI-Native Workflow
-This project was built using an AI-Native Workflow. I used Generative AI (ChatGPT) as a co-pilot to accelerate development, while maintaining strict human oversight.
+## Project Workflow
 
-- **AI for Python:** AI generated the Pandas pipeline to handle missing values, convert date formats, and cap extreme outliers.
-- **AI for SQL:** AI generated 15 complex SQL queries using CTEs and Window Functions (e.g., `LAG` for MoM growth).
-- **Human Validation:** I manually verified all AI-generated logic. For example, I noticed the `neighborhood` column was missing for 63% of the data, so I pivoted the dashboard to use `latitude/longitude` for geospatial mapping and `property_type` for categorical analysis.
+This project follows an **AI-assisted analytics workflow**. Generative AI tools, including ChatGPT, were used to support coding, debugging, SQL development and documentation.
 
-## 📈 Key Insights
-1. **Revenue Concentration:** The vast majority of market revenue is driven by "Entire home/apt" listings.
-2. **The Superhost Paradox:** While Superhosts have higher occupancy per listing, **Regular Hosts generate significantly more total revenue** (26.4M vs 14.1M) due to their sheer volume in the market.
-3. **Bedrooms Drive Price:** Listings with 4 to 5 bedrooms command the highest ADR, peaking at over AED 1,000 per night.
+### 1. Python – Data Preparation
+- Used Pandas for data inspection and cleaning.
+- Handled missing values.
+- Converted date columns into appropriate formats.
+- Prepared the monthly listing dataset for analysis.
 
-## 🛠️ Tools Used
-- **Python (Pandas):** Data cleaning and outlier capping.
-- **MySQL:** 15 advanced business queries.
-- **Power BI:** 2-page interactive dashboard with custom UI/UX.
-- **GenAI:** Prompt engineering, code generation, and validation.
+### 2. MySQL – Business Analysis
+Developed 15 SQL business-analysis queries covering:
 
-## 👤 Author
-**Yusuf Baig** — Data Analyst | SQL · Power BI · Python
-- LinkedIn: [linkedin.com/in/yusuf-baig-783906210](https://www.linkedin.com/in/yusuf-baig-783906210/)
+- Data validation and duplicate checks
+- Monthly revenue and occupancy trends
+- Superhost versus regular-host performance
+- Property type and bedroom analysis
+- Revenue growth using `LAG()`
+- Neighborhood and host rankings
+- Room-type revenue contribution
+- Listing performance classification
+
+### 3. Power BI – Dashboard Development
+Created a two-page interactive dashboard:
+
+- Executive Overview
+- Host and Property Deep Dive
+
+### 4. AI-Assisted Development
+AI was used as a coding and problem-solving assistant. Generated suggestions were reviewed and refined to improve query logic, metric definitions and analytical interpretation.
+
+## Key Analytical Areas
+
+- Revenue contribution by property type
+- Superhost versus regular-host performance
+- Average daily rate (ADR) by bedroom count
+- Neighborhood-level performance
+- Listing occupancy classification
+- Monthly revenue trends
+
+**Note:** Refresh exact business findings and numerical claims after executing the revised SQL queries and reconciling them with the Power BI dashboard.
+
+## Important Metric Definitions and Limitations
+
+- The analysis uses one row per listing per month. A duplicate listing-month validation query is included.
+- Listing-level comparisons aggregate monthly observations first, so listings with more observed months do not automatically receive greater weight in average listing performance.
+- Total revenue is calculated by summing the existing `revenue` column. Its underlying calculation depends on the source data preparation.
+- Occupancy is assumed to be stored as a fraction between 0 and 1.
+- Superhost comparisons are descriptive and do not establish causation.
+- Neighborhood rankings exclude missing or blank neighborhood names. Missing neighborhood coverage limits geographic analysis.
+- Revenue growth comparisons should be interpreted carefully if reporting months are missing.
+- Occupancy performance categories use analytical thresholds selected for this project, not universal industry standards.
+
+## Tools and Technologies
+
+| Tool | Purpose |
+|---|---|
+| Python | Data cleaning and preparation |
+| Pandas | Data manipulation |
+| MySQL | SQL analysis and business queries |
+| Power BI | Dashboard development |
+| Generative AI | Coding assistance and debugging |
+
+## Repository Files
+
+- `Airbnb.ipynb` – Python analysis and data preparation
+- `Sql_analysis.sql` – SQL business analysis
+- `listings_clean.csv` – Cleaned dataset
+- `powerbi_dashboard.pbix` – Power BI dashboard
+- `page1_executive.png` – Executive dashboard screenshot
+- `page2_host_property.png` – Host and property dashboard screenshot
+
+## Author
+
+**Yusuf Baig**  
+Aspiring Data Analyst | Python | SQL | Excel | Power BI
+
+- LinkedIn: [Yusuf Baig](https://www.linkedin.com/in/yusuf-baig-783906210/)
 - GitHub: [@Yusufbaig2001](https://github.com/Yusufbaig2001)
