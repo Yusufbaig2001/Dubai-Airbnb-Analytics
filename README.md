@@ -34,7 +34,8 @@ This project follows an **AI-assisted analytics workflow**. Generative AI tools,
 - Handled missing values.
 - Converted date columns into appropriate formats.
 - Prepared the monthly listing dataset for analysis.
-
+- **Python:** Used ChatGPT to help draft the Pandas cleaning steps (missing values, date formats, outlier capping); I reviewed and ran each step.
+  
 ### 2. MySQL – Business Analysis
 Developed 15 SQL business-analysis queries covering:
 
@@ -46,7 +47,8 @@ Developed 15 SQL business-analysis queries covering:
 - Neighborhood and host rankings
 - Room-type revenue contribution
 - Listing performance classification
-
+- **SQL:** Used ChatGPT to help draft the 15 queries (CTEs, window functions such as LAG for MoM growth); I tested them against the data.
+   
 ### 3. Power BI – Dashboard Development
 Created a two-page interactive dashboard:
 
@@ -88,19 +90,17 @@ AI was used as a coding and problem-solving assistant. Generated suggestions wer
 | Power BI | Dashboard development |
 | Generative AI | Coding assistance and debugging |
 
-## Repository Files
-
-- `Airbnb.ipynb` – Python analysis and data preparation
-- `Sql_analysis.sql` – SQL business analysis
-- `listings_clean.csv` – Cleaned dataset
-- `powerbi_dashboard.pbix` – Power BI dashboard
-- `page1_executive.png` – Executive dashboard screenshot
-- `page2_host_property.png` – Host and property dashboard screenshot
+  ## 📁 Repository Structure
+  - `Airbnb.ipynb` — Python data cleaning (Pandas)
+  - `listings_clean.csv` — Cleaned dataset used for SQL and Power BI
+  - `Sql_analysis.sql` — 15 business analysis queries
+  - `powerbi_dashboard.pbix` — Power BI dashboard file
+  - `page1_executive.png`, `page2_host_property.png` — Dashboard screenshots
 
 ## Author
 
 **Yusuf Baig**  
-Aspiring Data Analyst | Python | SQL | Excel | Power BI
+Data Analyst | Python | SQL | Excel | Power BI
 
 - LinkedIn: [Yusuf Baig](https://www.linkedin.com/in/yusuf-baig-783906210/)
 - GitHub: [@Yusufbaig2001](https://github.com/Yusufbaig2001)
